@@ -9,6 +9,10 @@ the OmniNOCS annotations for these data sources: [KITTI], [Virtual-KITTI],
 [nuScenes], [Waymo-OD], [Cityscapes], [Hypersim], [Objectron], [ARKitScenes],
 and [NOCS-Real275].
 
+**Quick links:**
+[Data](https://console.cloud.google.com/storage/browser/omninocs-dataset) |
+[Notebook](./notebooks/OmniNOCS_dataset_visualization.ipynb)
+
 ![OmniNOCS dataset](./docs/images/dataset_figure_mini.jpg)
 
 ## Data format

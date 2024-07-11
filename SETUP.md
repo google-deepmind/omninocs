@@ -8,7 +8,7 @@ OmniNOCS adds object NOCS annotations to 10 3D datasets: [KITTI],
 
 The data release includes the NOCS and 3D object annotations. Users are required
 to download the images from the respective datasets. We provide here the list of
-sources to donwload data from below. Using OmniNOCS requires agreeing to the
+sources to download data from below. Using OmniNOCS requires agreeing to the
 data policy of these datasets.
 
 Dataset            | Download Links
@@ -34,20 +34,32 @@ ARKitScenes        | [Images](https://github.com/facebookresearch/omni3d/blob/ma
 
 ## Download NOCS annotations
 
-The NOCS annotations for each dataset are provided through the following files:
+The NOCS annotations for each dataset are provided through the GCP buckets
+below:
 
-```
-Links to download OmniNOCS data will be available here soon!
-```
+-   [OmniNOCS data](https://console.cloud.google.com/storage/browser/omninocs-dataset)
+    (without the Waymo subset)
+-   [OmniNOCS-Waymo subset](https://console.cloud.google.com/storage/browser/omni_nocs)
 
+It is recommended to use the
+[gsutil](https://cloud.google.com/storage/docs/gsutil) tool to download them.
 
-For each dataset, we provide: - {train/val/test}_metadata.json: contains path to
-images, NOCS and segmentation maps, along with other object metadata (pose,
-category, size). - dataset folder that contains the NOCS and instance
-segmentation maps. Note that these annotations are released under licenses as
-specified in the [README](./README.md#license-and-disclaimer).
+The annotations for each data subset of OmniNOCS are provided as a separate
+tar.gz file. Each tar.gz contains a folder named
+`omninocs_release_<dataset_name>`, which itself contains:
 
-After downloading, this leads a directory structure as follows:
+-   a folder with the NOCS images and instance segmentation maps, named after
+    the subset (eg: kitti_object).
+-   3 metadata files `<train/val/test>_metadata.json` (one for each split) which
+    contain path to images, NOCS, segmentation maps, and other object metadata
+    (pose, category, size) for each example (see
+    [data format](./README.md#data-format)).
+
+Note that these annotations are released under licenses as specified in the
+[README](./README.md#license-and-disclaimer).
+
+Move the contents of each OmniNOCS subset to a common `omninocs_root` folder.
+This will result in a directory structure as follows:
 
 ```
 - omninocs_root
